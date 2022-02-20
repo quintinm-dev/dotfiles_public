@@ -15,7 +15,7 @@ I found these two articles immensely helpful when setting this up. I encourage r
 - https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
 - https://www.stevenrbaker.com/tech/managing-dotfiles-with-gnu-stow.html
 
-You can also track dotfiles changes using only `git`, discussed [here](https://news.ycombinator.com/item?id=11071754). However, I prefer having symlinks and being able to pick and choose which dotfiles to apply from a repository.
+You can also track dotfiles using only `git`, discussed [here](https://news.ycombinator.com/item?id=11071754). However, I prefer having symlinks and being able to pick and choose which dotfiles to apply from a repository.
 
 ## Submodules
 You may also want to use [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
