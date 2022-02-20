@@ -1,0 +1,6 @@
+i base-files - Debian base system miscellaneous files
+i base-passwd - Debian base system master password and group files
+i bash - GNU Bourne Again SHell
+i A bash-completion - programmable completion for the bash shell
+i A bc - GNU bc arbitrary precision calculator language
+# There are obviously more, this is an example list

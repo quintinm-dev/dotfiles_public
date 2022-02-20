@@ -1,0 +1,12 @@
+i  awscli - Universal Command Line Environment for AWS
+i  code - Code editing. Redefined.
+i  htop - interactive processes viewer
+i  inotify-tools - command-line programs providing a simple interface to inotify
+i  libssl-dev - Secure Sockets Layer toolkit - development files
+i  neofetch - Shows Linux System Information with Distribution Logo
+i  shellcheck - lint tool for shell scripts
+i  snapd - Daemon and tooling that enable snap packages
+i  stow - Organizer for /usr/local software packages
+i  tree - displays an indented directory tree, in color
+i  yamllint - Linter for YAML files
+i  zsh - shell with lots of features
