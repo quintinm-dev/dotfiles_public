@@ -19,6 +19,9 @@ ln -s ../../_packages/precommit_hook.sh .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
 
+### Demo
+![git hook demo](git_hook_demo.gif)
+
 ## Installations warranting explanation
 Commit messages should provide explanations, but for installs that I know I'll quickly forget the reason for, I have this manually-maintained list:
 - inotify-tools: for Phoenix live view through [FileSystem](https://github.com/falood/file_system/blob/acfc8a36b1a1bbb2e64e6451173ed03309812b2c/lib/file_system/backends/fs_inotify.ex#L43)
