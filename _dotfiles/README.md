@@ -15,8 +15,6 @@ I found these two articles immensely helpful when setting this up. I encourage r
 - https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
 - https://www.stevenrbaker.com/tech/managing-dotfiles-with-gnu-stow.html
 
-You can also track dotfiles using only `git`, discussed [here](https://news.ycombinator.com/item?id=11071754). However, I prefer having symlinks and being able to pick and choose which dotfiles to apply from a repository.
-
 ## Submodules
 You may also want to use [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
@@ -29,3 +27,9 @@ Then to set things up on another machine, I either clone with `--recurse-submodu
 ```
 git submodule update --init --recursive
 ```
+
+## Other solutions
+There are many options for managing your dotfiles. These are some of the other ways I've considered, although there are many more:
+- Raw `git`, discussed [here](https://news.ycombinator.com/item?id=11071754). However, I prefer having symlinks and being able to pick and choose which dotfiles to apply from a repository.
+- [yadm](https://yadm.io/), which has cool features like encryption and alternate sections within files for different systems. I stuck with `stow` as I was already using it, but I might switch over.
+- [chezmoi](https://www.chezmoi.io), which seems to have [more features](https://www.chezmoi.io/comparison-table/). At the moment it's a bit overkill pour moi.

@@ -1,7 +1,7 @@
 # Overview
 This public repository provides an example of how I organize my configuration of a Linux machine. The private version has two goals: first, to be able to restore a minimal setup on a new machine, and second, to track why I've made certain changes. Different branches can be used for different machines.
 
-Although it started with just dotfiles, there are now three logical parts:
+Although it started with just dotfiles, there are now three parts:
 1. [Debian packages](https://www.debian.org/distrib/packages) that I personally installed.
 2. [Dotfiles](https://wiki.archlinux.org/title/Dotfiles), managed using [stow](https://www.gnu.org/software/stow/).
 3. [GNOME](https://www.gnome.org/) desktop environment configuration.
