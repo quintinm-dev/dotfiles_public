@@ -16,7 +16,11 @@ prompt_confirm() {
 OUTPUT_FILE=$(pwd)/_packages/installed_debs.txt
 
 # `eval` is bad but the command is hard-coded
-query_cmd="aptitude search '~i' | grep -Fxv -f $(pwd)/_packages/initial_debs.txt | grep -iv '^..A'"
+# TODO: do this more cleanly with awk instead of the inelegant double grep; general approach is:
+# 1) find non-manually installed packages, then of those:
+# 2) output ones that weren't found in 3), where:
+# 3) is the initial install list with the descriptions stripped
+query_cmd="aptitude search '~i !~M' | grep -Fv -f <(grep -Po 'i  [\w-]+ ' ~/logs/aptitude/initial_install_list.log)"
 new_installs=$(eval "$query_cmd")
 
 # Note the need to quote variables to preserve line breaks
