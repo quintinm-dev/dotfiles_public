@@ -5,7 +5,7 @@
 The script is to be run from the base of this repo.
 
 ## Why?
-When I was setting up a new machine, I wanted a listing of packages that I had personally installed on my old machine. [There were commands to do this](https://stackoverflow.com/questions/41007182/debian-listing-all-user-installed-packages), but they included many packages I didn't actually install myself, such as `gnome-user-docs-de` and `sysvinit-utils`.
+When I was setting up a new machine, I wanted a listing of packages that I had personally installed on my old machine. There are various ways to do this ([1](https://stackoverflow.com/questions/41007182/debian-listing-all-user-installed-packages), [2](https://askubuntu.com/questions/2389/how-to-list-manually-installed-packages)), but the ones I tried included many packages I didn't actually install myself, such as `gnome-user-docs-de` and `sysvinit-utils`.
 
 ## Initial install list
 Most of the false-positives came about from the original install of the Linux distribution, [Pop!_OS](https://pop.system76.com/). To avoid this problem for my new machine, I recorded the initial install list[^1] output by [`aptitude`](https://wiki.debian.org/Aptitude)[^2] before installing anything myself, which I can now diff against.
@@ -28,16 +28,12 @@ Commit messages should provide explanations, but for installs that I know I'll q
 - libssl-dev: for [ruby-build](https://github.com/rbenv/ruby-build/wiki#troubleshooting) which is used by ruby-asdf under the hood
 
 ## Issues
-There are three issues which sometimes require me to update the original install list manually:
-1. System updates sometimes mark certain packages as manually installed. E.g. `libpop-upgrade-gtk` and `pop-upgrade` were originally marked as autoinstalled but changed to manual.
+There are two issues which sometimes require me to update the original install list manually:
+1. System updates sometimes mark certain packages as manually installed. E.g. `libpop-upgrade-gtk` and `pop-upgrade` were originally marked as autoinstalled but changed to manual. This results in false positives.
 
-2. System updates sometimes mark packages that were previously user-installed as auto-installed. E.g. `kitty` was a manual install by me on Pop 21.04 but became automatically installed on 21.10.
+2. System updates sometimes mark packages that were previously user-installed as auto-installed. E.g. `kitty` was a manual install by me on Pop 21.04 but became automatically installed on 21.10. This results in false negatives.
 
-3. My script also compares the package descriptions, which means that when `gnome-user-docs-de` went from "GNOME user docs" to "GNOME Help", it thought that it was a new user-install.
-
-To fix 1 and 2, I need to make the diff agnostic to whether the package was marked as automatically installed.  
-To fix 3 I need to stop comparing the descriptions when diffing.  
-These should be easy fixes, maybe I'll do it eventually...
+If these happen often enough I'll work on a fix.
 
 [^1]: The file I have provided is a very minimal example.
 [^2]: I tried out `apt` as well but preferred the default output format of `aptitude`. IIRC aptitude also made it easier to remove certain metapackages.
